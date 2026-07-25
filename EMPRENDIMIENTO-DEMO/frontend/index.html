@@ -5,11 +5,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamburguesas Gigantes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            padding: 16px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        nav a {
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        #hero p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        article {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        article img {
+            width: 100%;
+            display: block;
+        }
+
+        article h3 {
+            font-size: 1.1rem;
+            margin: 12px 16px 4px;
+        }
+
+        article p {
+            margin: 0 16px 16px;
+            color: #555;
+        }
+
+        footer {
+            border-top: 1px solid #ddd;
+            padding-top: 16px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #777;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 24px 32px;
+            }
+
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav {
+                flex-direction: row;
+                gap: 24px;
+            }
+
+            #hamburguesas {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            #hamburguesas h2 {
+                width: 100%;
+            }
+
+            article {
+                flex: 1 1 calc(50% - 12px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                padding: 32px 64px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            #hero p {
+                font-size: 1.125rem;
+            }
+
+            article {
+                flex: 1 1 calc(33.333% - 16px);
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: flex-start;
+            }
+
+            article img {
+                width: 200px;
+                flex-shrink: 0;
+            }
+
+            article h3,
+            article p {
+                margin-left: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header: la parte superiror de la pagina. -->
-    <header> 
+    <header>
         <h1>Hamburguesas Gigantes</h1>
         <nav>
             <a href="#hamburguesas">Ir a ver Hamburguesas</a>
@@ -21,7 +164,7 @@
     <!-- Main: La parte donde se encuentra el contenido principal de la pagina -->
     <main>
         <!-- Seccion 1 (Hero): Bienvenida de la pagina -->
-        <section id="hero"> 
+        <section id="hero">
             <h2>Bienvenidos a mi emprendimiento de Hamburguesas</h2>
             <p>estas Hamburguesas estan hechas con amor y orgullo del negocio familiar que lleva 50 años  en el mercado</p>
         </section>
@@ -34,7 +177,7 @@
                 <h3>Hamburguesa La Grandota</h3>
                 <p>Hamburguesa con Lechuga, Carne y Queso - $10</p>
             </article>
-            
+
         </section>
 
         <!-- Seccion 3 (Contacto): Seccion de Contacto -->
