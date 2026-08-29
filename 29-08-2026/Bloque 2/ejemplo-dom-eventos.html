@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 2 - DOM y Eventos</title>
+  <style>
+    /* Estilos simples para que se vea presentable */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    /* Formulario para agregar tareas */
+    #formulario-tarea {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    #input-tarea {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+    #boton-agregar {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #boton-agregar:hover {
+      background: #45a049;
+    }
+    /* Contador de pendientes */
+    #contador {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    /* Lista de tareas */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      margin-bottom: 8px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    li.completada {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+    /* Botón para marcar como completada */
+    .boton-completar {
+      background: none;
+      border: 2px solid #4CAF50;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .boton-completar:hover {
+      background: #4CAF50;
+      color: white;
+    }
+    /* Botón para eliminar */
+    .boton-eliminar {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: #e74c3c;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .boton-eliminar:hover {
+      color: #c0392b;
+    }
+    /* Filtros */
+    .filtros {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .filtro-btn {
+      padding: 6px 14px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .filtro-btn.activo {
+      border-color: #4CAF50;
+      background: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mi To-Do List</h1>
+
+  <!-- ============================================
+       FORMULARIO: captura de entrada del usuario
+       ============================================ -->
+  <form id="formulario-tarea">
+    <!-- El input donde el usuario escribe la tarea -->
+    <input
+      type="text"
+      id="input-tarea"
+      placeholder="Escribe una tarea..."
+      required
+    />
+    <!-- Botón de envío -->
+    <button type="submit" id="boton-agregar">Agregar</button>
+  </form>
+
+  <!-- ============================================
+       CONTADOR: muestra cuántas tareas quedan pendientes
+       Se actualiza cada vez que se agrega, completa o elimina una tarea
+       ============================================ -->
+  <p id="contador">Tareas pendientes: 0</p>
+
+  <!-- ============================================
+       FILTROS: botones para filtrar tareas
+       ============================================ -->
+  <div class="filtros">
+    <button class="filtro-btn activo" data-filtro="todas">Todas</button>
+    <button class="filtro-btn" data-filtro="pendientes">Pendientes</button>
+    <button class="filtro-btn" data-filtro="completadas">Completadas</button>
+  </div>
+
+  <!-- ============================================
+       LISTA: aquí se insertan las tareas dinámicamente
+       ============================================ -->
+  <ul id="lista-tareas"></ul>
+
+
+  <script>
+    // =============================================
+    // PASO 1: Seleccionar los elementos del DOM
+    // =============================================
+    // querySelector('#id') → devuelve el PRIMER elemento con ese ID
+    const formulario = document.querySelector('#formulario-tarea');
+    const inputTarea = document.querySelector('#input-tarea');
+    const listaTareas = document.querySelector('#lista-tareas');
+    const contador = document.querySelector('#contador');
+    // querySelectorAll('.clase') → devuelve TODOS los elementos con esa clase (como NodeList)
+    const botonesFiltro = document.querySelectorAll('.filtro-btn');
+
+    // =============================================
+    // PASO 2: Estado de la aplicación
+    // =============================================
+    // Array que guarda todas las tareas como objetos
+    let tareas = [];
+    // Filtro actual: 'todas', 'pendientes' o 'completadas'
+    let filtroActual = 'todas';
+
+    // =============================================
+    // PASO 3: Event Listener en el formulario
+    // =============================================
+    // addEventListener('submit', ...) se ejecuta cuando el usuario envía el formulario
+    // El evento 'submit' se activa al presionar Enter o al hacer clic en "Agregar"
+    formulario.addEventListener('submit', function(event) {
+      // ¡IMPORTANTE! preventDefault() evita que el navegador recargue la página
+      // Sin esto, al enviar el formulario la página se recargaría y perderíamos todo
+      event.preventDefault();
+
+      // Obtener el texto del input y limpiar espacios extra
+      const texto = inputTarea.value.trim();
+
+      // No agregar tareas vacías
+      if (texto === '') return;
+
+      // Crear objeto tarea y agregarlo al array
+      tareas.push({
+        id: Date.now(),
+        texto: texto,
+        completada: false
+      });
+
+      // Limpiar el input para que el usuario pueda escribir otra tarea
+      inputTarea.value = '';
+
+      // Actualizar la pantalla
+      renderizarTareas();
+    });
+
+    // =============================================
+    // PASO 4: Event Listeners en los botones de filtro
+    // =============================================
+    // querySelectorAll devolvió una NodeList, la recorremos con forEach
+    botonesFiltro.forEach(function(boton) {
+      // Cada botón tiene un data-filtro (todas, pendientes, completadas)
+      boton.addEventListener('click', function() {
+        // Actualizar el filtro activo
+        filtroActual = boton.getAttribute('data-filtro');
+
+        // Quitar clase 'activo' de todos los botones
+        botonesFiltro.forEach(function(b) {
+          b.classList.remove('activo');
+        });
+
+        // Poner clase 'activo' al botón clickeado
+        boton.classList.add('activo');
+
+        // Volver a renderizar la lista con el nuevo filtro
+        renderizarTareas();
+      });
+    });
+
+    // =============================================
+    // PASO 5: Función para renderizar (dibujar) las tareas
+    // =============================================
+    function renderizarTareas() {
+      // Vaciar la lista actual
+      listaTareas.innerHTML = '';
+
+      // Filtrar tareas según el filtro activo
+      let tareasFiltradas = tareas;
+
+      if (filtroActual === 'pendientes') {
+        // filter() crea un nuevo array solo con las que NO están completadas
+        tareasFiltradas = tareas.filter(function(t) {
+          return t.completada === false;
+        });
+      } else if (filtroActual === 'completadas') {
+        // Solo las completadas
+        tareasFiltradas = tareas.filter(function(t) {
+          return t.completada === true;
+        });
+      }
+
+      // Recorrer cada tarea y crear su elemento HTML
+      tareasFiltradas.forEach(function(tarea) {
+        // Crear el elemento <li>
+        const li = document.createElement('li');
+
+        // Si la tarea está completada, agregar la clase CSS correspondiente
+        if (tarea.completada) {
+          li.classList.add('completada');
+        }
+
+        // =============================================
+        // Crear el botón de completar (check)
+        // =============================================
+        const botonCompletar = document.createElement('button');
+        botonCompletar.textContent = tarea.completada ? '✓' : '';
+        botonCompletar.classList.add('boton-completar');
+
+        // Event Listener: al hacer clic, cambia el estado de completada
+        botonCompletar.addEventListener('click', function() {
+          // Buscar la tarea por su ID y cambiar completada
+          const t = tareas.find(function(t) {
+            return t.id === tarea.id;
+          });
+          t.completada = !t.completada; // alternar: true → false, false → true
+          renderizarTareas();
+        });
+
+        // =============================================
+        // Crear el texto de la tarea
+        // =============================================
+        const spanTexto = document.createElement('span');
+        spanTexto.textContent = tarea.texto;
+
+        // =============================================
+        // Crear el botón de eliminar
+        // =============================================
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = '×';
+        botonEliminar.classList.add('boton-eliminar');
+
+        // Event Listener: al hacer clic, elimina la tarea del array
+        botonEliminar.addEventListener('click', function() {
+          // filter() devuelve un nuevo array SIN la tarea eliminada
+          tareas = tareas.filter(function(t) {
+            return t.id !== tarea.id;
+          });
+          renderizarTareas();
+        });
+
+        // =============================================
+        // Ensamblar el <li> con todos sus hijos
+        // =============================================
+        li.appendChild(botonCompletar);
+        li.appendChild(spanTexto);
+        li.appendChild(botonEliminar);
+
+        // Agregar el <li> a la lista <ul>
+        listaTareas.appendChild(li);
+      });
+
+      // =============================================
+      // PASO 6: Actualizar el contador de pendientes
+      // =============================================
+      // querySelectorAll('.clase:not(.otra-clase)') → selecciona elementos sin esa clase
+      const pendientes = document.querySelectorAll('.tarea:not(.completada)');
+
+      // textContent cambia el texto dentro del elemento
+      // Usamos template literal (comillas invertidas + ${}) para insertar variables
+      const totalPendientes = tareas.filter(function(t) {
+        return t.completada === false;
+      }).length;
+
+      contador.textContent = 'Tareas pendientes: ' + totalPendientes;
+    }
+
+    // =============================================
+    // Renderizar al cargar la página (por si ya hubiera tareas)
+    // =============================================
+    renderizarTareas();
+
+  </script>
+</body>
+</html>

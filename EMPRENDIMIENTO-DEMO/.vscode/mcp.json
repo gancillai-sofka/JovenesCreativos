@@ -1,0 +1,12 @@
+{
+	"servers": {
+		"bda-mcp-remote": {
+			"url": "http://127.0.0.1:8000",
+			"type": "http",
+			"headers": {
+				"x-api-key": "your-secret-api-key"
+			}
+		}
+	},
+	"inputs": []
+}

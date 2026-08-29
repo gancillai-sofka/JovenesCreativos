@@ -1,0 +1,352 @@
+﻿JÓVENES CREATIVOS 2026
+Día de cierre de brechas
+Sintaxis JS · DOM y eventos · Grid y Tailwind · Sitio estático + deploy
+	Semana
+	Semana 12
+	Modalidad
+	Presencial — grupos Básico y Avanzado juntos en la misma sala
+	Duración
+	3 horas (180 minutos)
+	Fecha sugerida
+	Sábado — sesión presencial
+	
+
+Campo
+	Detalle
+	Objetivo de la sesión
+	Diagnosticar en vivo el dominio real de cada estudiante sobre cuatro bloques ya vistos (sintaxis JS, DOM/eventos, Grid y Tailwind, sitio estático + deploy) y cerrar brechas puntuales con práctica guiada — no se introduce contenido nuevo, se repasa lo que más van a necesitar para su proyecto.
+	Sesión inmediatamente anterior
+	Sintaxis JS y DOM/eventos (contenido reciente) · CSS Grid, Tailwind y publicación en Netlify/GitHub Pages (visto en semanas previas).
+	Materiales / setup
+	Padlet creado con 4 columnas (una por tema) y enlace/QR listo para compartir, cada estudiante en su propio computador con Node.js instalado y proyecto clonado localmente, cronómetro visible para el mentor, premio simbólico para el repaso integrador en equipos. No se requieren mesas grandes ni materiales impresos: es 1 mentor para toda la sala, guiando desde el frente.
+	________________
+
+
+Cómo leer esta guía
+⚠ Enfoque de la sesión: diagnóstico, no reensañanza
+Esta sesión NO es una repetición de las clases originales. El objetivo es detectar quién domina cada tema, quién necesita práctica y quién tiene un vacío real — y usar el tiempo en cerrar esos vacíos, no en explicar todo de nuevo desde cero.
+Si un estudiante ya domina un bloque, no lo hagas sentarse a repasar lo obvio: dale el reto extendido y usa tu tiempo con quien lo necesita.
+No menciones “Básico” ni “Avanzado” frente al grupo. Todos están en la misma sala y la diferenciación es por ritmo (mínimo/medio/extendido), nunca por track.
+Si detectas un vacío grave y transversal (por ejemplo, la mayoría no recuerda cómo seleccionar un elemento del DOM), anótalo para la mentoría entre semana — hoy no hay tiempo de reconstruir un tema completo para todos.
+	
+
+La sesión se organiza en 4 bloques secuenciales de diagnóstico (uno por tema), un repaso integrador en equipos, y un cierre de aplicación a proyecto. Como hay un solo mentor para toda la sala y cada estudiante trabaja en su propio computador (sin mesas grandes de trabajo), los bloques NO son estaciones para rotar: todos avanzan juntos por el mismo bloque al mismo tiempo, guiados desde el frente. El mentor usa el semáforo de dominio como termómetro para decidir, bloque por bloque, si enseña al grupo completo o pasa directo a la práctica — y se apoya en “compañeros de apoyo” (estudiantes en verde) para multiplicar su alcance, ya que no puede atender brechas individuales una por una.
+⚠ Cómo cerrar brechas con 1 solo mentor y 1 computador por estudiante
+No hay mesas grandes ni varios mentores por sub-grupo: es 1 mentor para toda la sala, cada estudiante en su propio puesto/computador. Por eso el modelo de “estaciones a las que se rota” no aplica aquí — todos hacen el mismo bloque al mismo tiempo, y el mentor enseña al frente cuando el Padlet lo pide.
+Compañeros de apoyo: al abrir cada bloque, pide que levanten la mano quienes marcaron verde en ese tema. Pídeles que, durante el reto guiado, estén atentos al compañero de al lado si ve que se atasca — así multiplicas tu alcance sin tener que llegar a cada puesto tú mismo/a.
+Prepárate para dar la sesión completa si hace falta: cada bloque incluye abajo un mini-guión de explicación ya redactado (no solo la idea de “da un ejemplo”), para que si el Padlet sale mayormente amarillo/rojo puedas enseñar al grupo completo sin improvisar sobre la marcha.
+Camina por los pasillos entre puestos mientras trabajan en el reto — no para explicar a cada uno, sino para detectar rápido a quién atender primero (el que está detenido, no el que está en silencio pero avanzando).
+	
+
+Agenda general (180 min)
+Cada bloque incluye 5-7 min de refuerzo condicional (solo si el Padlet muestra debilidad en ese tema). Por eso el bloque tiene márgen: si el grupo llega fuerte en un tema, sobra tiempo para profundizar el reto extendido; si llega débil, ese margen se usa en explicar al frente.
+Tiempo
+	Bloque
+	Qué pasa
+	0:00 – 0:15
+	Bienvenida + check-in de proyecto/GitHub
+	Registro rápido de avance y estado de repositorio. No se resuelven problemas en el momento.
+	0:15 – 0:25
+	Semáforo de dominio en Padlet
+	Autoevaluación individual rápida sobre los 4 temas del día, publicada en el Padlet del día.
+	0:25 – 0:50
+	Bloque 1: Sintaxis JS
+	Variables, tipos, operadores, console.log, mini-librería de cálculo. Incluye refuerzo condicional.
+	0:50 – 1:15
+	Bloque 2: DOM y eventos
+	Manipulación del DOM, formularios, to-do list interactiva. Incluye refuerzo condicional.
+	1:15 – 1:25
+	Descanso activo
+	Pausa de 10 min. Estirar, agua, salir del puesto.
+	1:25 – 1:50
+	Bloque 3: Grid y Tailwind
+	CSS Grid para layouts complejos, introducción a Tailwind CSS. Incluye refuerzo condicional.
+	1:50 – 2:15
+	Bloque 4: Sitio estático + deploy
+	Integración de todo lo visto, publicación en Netlify o GitHub Pages. Incluye refuerzo condicional.
+	2:15 – 2:35
+	Repaso integrador en equipos
+	Trivia/reto rápido que mezcla los 4 temas, en equipos mixtos.
+	2:35 – 2:55
+	Aplicación al proyecto propio
+	Cada estudiante identifica 1 brecha personal y arma un mini plan de acción.
+	2:55 – 3:00
+	Cierre + reflexión de salida
+	Conexión con el proyecto acumulativo y encuesta de salida.
+	________________
+
+
+Bloque 0 — Check-in de proyecto y GitHub (15 min)
+Apenas lleguen, antes de sentarse a trabajar, cada estudiante muestra brevemente al mentor de mesa (o registra en el Padlet de tres columnas) el estado de su repositorio y su avance desde la sesión anterior.
+* ¿Subió los cambios de la sesión de asincronía/Node a su repositorio?
+* ¿Tiene algún issue abierto o bloqueo técnico pendiente?
+* ¿Sabe en qué parte de su proyecto va a aplicar lo de hoy?
+
+
+⚠ Alerta para el mentor
+Si alguien no tiene el repositorio configurado o no puede hacer push, no lo soluciones en este momento. Registra el nombre y rémitelo a la sesión de mentoría “Sube tu proyecto a GitHub” o al próximo espacio de mentoría entre semana.
+	________________
+
+
+Bloque 0.5 — Semáforo de dominio, en Padlet (10 min)
+Antes de entrar a las estaciones, cada estudiante se autoevalúa en 5 minutos sobre los 4 temas del día usando el Padlet del día — no hay nada que imprimir. Esto no es un examen ni se califica: es el termómetro que te dice dónde enfocar tu tiempo como mentor durante las estaciones.
+Cómo montar el Padlet (5 min antes de la sesión)
+* Crea un Padlet formato “Lienzo” o “Cuadrícula” con 4 secciones/columnas, una por tema: Sintaxis JS · DOM y eventos · Grid y Tailwind · Sitio estático + deploy.
+* Comparte el enlace o QR al inicio del bloque; cada estudiante entra desde su celular o laptop, sin necesidad de cuenta si el Padlet está configurado para publicar anónimo.
+* Cada estudiante publica UNA nota por tema, con su nombre y un color: verde = lo domino, amarillo = necesito practicar, rojo = no lo entiendo. Puede agregar una frase corta (“me pierdo con las promesas encadenadas”).
+* Si el grupo no conoce Padlet, dales 1 minuto de instrucción rápida antes de empezar — ya lo usan para el check-in de proyecto, así que la mecánica les es familiar.
+
+
+⏱ Ritmo y tiempos
+Mientras publican, mira el Padlet proyectado o en tu propio celular. Fotógrafa/exporta el tablero al final — esos patrones (qué columna se llenó de amarillo/rojo) son los que deciden cuánto refuerzo das en cada estación, sin importar quién completó el módulo hace semanas.
+Esta misma lógica de semáforo por checkpoint es la que ya usa la herramienta “Ruta de tu proyecto” — puedes mencionarlo como el mismo tipo de autochequeo que ya conocen.
+	
+
+⚠ Regla de refuerzo por estación
+El Padlet no es solo diagnóstico: en cada estación, revisa primero su columna correspondiente. Si la mayoría marcó amarillo o rojo en ese tema, abre la estación con una mini-explicación de 5-7 minutos (ejemplo en vivo + una pregunta guiada) ANTES del reto — no pases directo a la práctica asumiendo que ya lo tienen claro.
+Si la columna está mayormente en verde, omítela y ve directo al reto guiado para no quitarles tiempo de práctica con algo que ya dominan.
+	________________
+
+
+Bloque 1 — Sintaxis JS (25 min)
+Variables, tipos, operadores, console.log y la mini-librería de cálculo.
+Banco de preguntas socráticas (diagnóstico rápido, 3 min)
+* ¿Qué diferencia hay entre let, const y var? ¿Cuándo usarían cada una en su proyecto?
+* Si escriben "5" + 3 en la consola, ¿qué esperan que salga? ¿Por qué?
+* ¿Para qué les ha servido console.log() esta semana en su propio código?
+
+
+ℹ Antes de empezar: revisa el Padlet
+Mira la columna “Sintaxis JS” del Padlet. Si predomina amarillo/rojo, usa el mini-guión de abajo para enseñar al frente (5-7 min). Si predomina verde, salta directo al reto.
+	
+
+Mini-guión de explicación (si hace falta enseñar al grupo completo)
+“Vamos a repasar rápido tres cosas: cómo declaramos variables, qué pasa cuando mezclamos tipos, y para qué usamos console.log. Abran su consola y vayan probando conmigo.”
+* let se puede reasignar, const no, var casi no la vamos a usar porque tiene un comportamiento raro con el alcance (scope). En su proyecto: usen const por defecto, y let solo si el valor va a cambiar.
+* Cuando escriben "5" + 3, JavaScript convierte el número en texto y concatena: el resultado es "53", no 8. Pero "5" - 3 sí da 2, porque el operador - fuerza la conversión a número. Pruébenlo en su consola ahora.
+* console.log() no es solo para “ver si funciona”: úsenlo para inspeccionar el valor y el TIPO de una variable en un punto exacto del código, sobre todo cuando algo no se comporta como esperan.
+
+
+Reto guiado: repara la mini-librería
+Comparte en pantalla el fragmento con 3 errores intencionales de tipo/operador. Cada estudiante trabaja en su propio computador; pídeles que volteen con el compañero de al lado para comparar lo que encontraron antes de corregirlo en su propio código.
+function calcularDescuento(precio, porcentaje) {
+  // Error 1: comparación con tipo incorrecto
+  if (porcentaje == "0") return precio;
+ 
+  // Error 2: operador mal aplicado (concatena en vez de sumar)
+  const descuento = precio * porcentaje + "100";
+ 
+  // Error 3: variable no declarada
+  total = precio - descuento;
+  return total;
+}
+ 
+console.log(calcularDescuento(50000, 10));
+	
+
+Diferenciación por ritmo
+Nivel
+	Reto
+	Mínimo
+	Encontrar y corregir los 3 errores marcados, verificando el resultado en consola.
+	Medio
+	Además, agregar una función nueva a la mini-librería (por ejemplo, calcularImpuesto) usando tipos y operadores correctos.
+	Extendido
+	Refactorizar la librería para validar tipos de entrada (typeof) y lanzar un mensaje claro en consola si el dato no es válido.
+	________________
+
+
+Bloque 2 — DOM y eventos (25 min)
+Manipulación del DOM, formularios y la to-do list interactiva.
+Banco de preguntas socráticas (diagnóstico rápido, 3 min)
+* ¿Qué diferencia hay entre querySelector y querySelectorAll?
+* ¿Qué pasa si no usan event.preventDefault() en un formulario?
+* En su to-do list, ¿dónde usaron addEventListener y para qué?
+
+
+ℹ Antes de empezar: revisa el Padlet
+Mira la columna “DOM y eventos” del Padlet. Si predomina amarillo/rojo, usa el mini-guión de abajo para enseñar al frente (5-7 min). Si predomina verde, salta directo al reto.
+	
+
+Mini-guión de explicación (si hace falta enseñar al grupo completo)
+“Vamos a ver juntos cómo seleccionamos un elemento y cómo reaccionamos a un clic. Abran su to-do list y sigamos el mismo elemento en su propio código.”
+* document.querySelector('#algo') devuelve el PRIMER elemento que coincide; document.querySelectorAll('.algo') devuelve TODOS los que coinciden, como una lista. Si esperan uno y usan querySelectorAll, van a tener que recorrer la lista para llegar a él.
+* addEventListener('click', función) le dice al navegador “cuando esto se haga clic, ejecuta esta función”. El orden importa: si el elemento se crea DESPUÉS de asignar el listener, ese listener no lo va a escuchar.
+* event.preventDefault() evita el comportamiento por defecto del navegador — en un <form>, eso es recargar la página al enviar. Sin él, cualquier dato que hayan guardado en variables se pierde con la recarga.
+
+
+Reto guiado: extiende la to-do list
+Cada estudiante abre su propia to-do list de la sesión anterior (o la de referencia si no la tiene). El reto es agregar una funcionalidad que aún no tenía:
+// Reto base: agregar un contador de tareas pendientes
+function actualizarContador() {
+  const pendientes = document.querySelectorAll('.tarea:not(.completada)');
+  document.querySelector('#contador').textContent =
+    `Tareas pendientes: ${pendientes.length}`;
+}
+	
+
+Diferenciación por ritmo
+Nivel
+	Reto
+	Mínimo
+	Implementar el contador de tareas pendientes y conectarlo a los eventos existentes (agregar/marcar/eliminar).
+	Medio
+	Agregar un filtro (mostrar solo pendientes / solo completadas) usando manipulación del DOM.
+	Extendido
+	Guardar el estado de la lista en localStorage para que persista al recargar la página.
+	
+
+Errores comunes en esta estación
+Error frecuente
+	Cómo guiarlos a la solución
+	El evento no dispara porque el elemento se creó después de asignar el listener.
+	Pregúntales: ¿cuándo se ejecuta ese addEventListener, antes o después de crear el elemento?
+	Usan innerHTML para insertar texto de un input sin sanitizar.
+	Pregúntales qué pasaría si alguien escribe código HTML en ese campo.
+	El formulario recarga la página al enviarlo.
+	Pregúntales qué comportamiento por defecto tiene un <form> y cómo se detiene.
+	________________
+
+
+Bloque 3 — Grid y diseño moderno con Tailwind (25 min)
+CSS Grid para layouts complejos e introducción a Tailwind CSS como tendencia actual.
+Banco de preguntas socráticas (diagnóstico rápido, 3 min)
+* ¿Qué diferencia hay entre Flexbox y Grid? ¿Cuándo usarían uno u otro en su proyecto?
+* ¿Para qué sirve display: grid y qué cambia en el diseño?
+* ¿Qué ventaja o desventaja le ven a escribir clases de Tailwind directo en el HTML, en vez de CSS aparte?
+
+
+ℹ Antes de empezar: revisa el Padlet
+Mira la columna “Grid y Tailwind” del Padlet. Si predomina amarillo/rojo, usa el mini-guión de abajo para enseñar al frente (5-7 min). Si predomina verde, salta directo al reto.
+	
+
+Mini-guión de explicación (si hace falta enseñar al grupo completo)
+“Vamos a ver la diferencia entre organizar en una sola dirección y organizar en cuadrícula, y cómo Tailwind nos ahorra escribir ese CSS.”
+* Flexbox acomoda elementos en UNA dirección (fila o columna). Grid acomoda en filas Y columnas al mismo tiempo — por eso es mejor para layouts tipo galería de tarjetas, dashboards, o el layout general de una página.
+* display: grid activa Grid en un contenedor. grid-template-columns: repeat(3, 1fr) crea 3 columnas de ancho igual (1fr = una fracción del espacio disponible). gap: 16px separa las celdas sin usar margin.
+* Tailwind no es un framework de componentes: son clases utilitarias (grid, grid-cols-3, gap-4, p-4) que aplican una sola propiedad CSS cada una, directo en el HTML. Se gana velocidad y consistencia; se pierde algo de “limpieza visual” en el HTML — es un trade-off, no una regla absoluta.
+
+
+Reto guiado: de tarjetas sueltas a grid responsive
+Comparte en pantalla un layout de tarjetas hecho con divs sueltos (sin grid) y pide que cada estudiante lo convierta a un grid de 3 columnas con Tailwind, en su propio proyecto o en este ejemplo.
+<!-- Antes: tarjetas sueltas, sin estructura de cuadrícula -->
+<div>
+  <div class="bg-white p-4 shadow">Tarjeta 1</div>
+  <div class="bg-white p-4 shadow">Tarjeta 2</div>
+  <div class="bg-white p-4 shadow">Tarjeta 3</div>
+</div>
+ 
+<!-- DESPUÉS: envolver en un contenedor grid grid-cols-3 gap-4 -->
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-white p-4 shadow">Tarjeta 1</div>
+  <div class="bg-white p-4 shadow">Tarjeta 2</div>
+  <div class="bg-white p-4 shadow">Tarjeta 3</div>
+</div>
+	
+
+Diferenciación por ritmo
+Nivel
+	Reto
+	Mínimo
+	Aplicar grid grid-cols-3 gap-4 al contenedor de tarjetas y verificar que se acomodan en 3 columnas.
+	Medio
+	Hacerlo responsive: grid-cols-1 en mobile y md:grid-cols-3 en pantallas grandes.
+	Extendido
+	Combinar Grid con Flexbox para un layout de página completo (header + sidebar + contenido principal).
+	________________
+
+
+Bloque 4 — Sitio estático completo + deploy (25 min)
+Integración de todo lo visto y publicación en Netlify o GitHub Pages.
+Banco de preguntas socráticas (diagnóstico rápido, 3 min)
+* ¿Qué archivos mínimos necesita un sitio estático para funcionar en un navegador?
+* ¿Qué diferencia hay entre GitHub Pages y Netlify?
+* ¿Ya tienen su sitio subido a un repositorio? ¿Qué le falta para quedar publicado?
+* (Solo si aplica) ¿Alguien ya probó consumir una API pública con fetch en su proyecto? ¿Cómo les fue?
+
+
+ℹ Antes de empezar: revisa el Padlet
+Mira la columna “Sitio estático + deploy” del Padlet. Si predomina amarillo/rojo, usa el mini-guión de abajo para enseñar al frente (5-7 min). Si predomina verde, salta directo al reto.
+	
+
+Mini-guión de explicación (si hace falta enseñar al grupo completo)
+“Vamos a repasar qué significa publicar un sitio y las dos formas más comunes de hacerlo gratis.”
+* Un sitio estático es simplemente sus archivos HTML, CSS y JS servidos tal cual, sin backend ni base de datos — por eso se puede publicar gratis y sin servidor propio.
+* GitHub Pages toma directamente el contenido de un repositorio (usualmente la rama main o una carpeta docs) y lo publica en una URL tipo usuario.github.io/repositorio. Netlify permite arrastrar una carpeta o conectar el repositorio con más opciones de configuración.
+* Publicar no es el final del proyecto: cada vez que hagan un nuevo push a su repositorio, pueden volver a desplegar y la versión pública se actualiza.
+
+
+Reto guiado: publica (o verifica) tu sitio
+Cada estudiante despliega su propio sitio si aún no lo ha hecho, o verifica que el link público ya existente funcione de principio a fin (idealmente abriéndolo desde su celular, no solo desde el mismo computador).
+# Opción 1: GitHub Pages
+# 1. Sube tus cambios a la rama principal
+git add .
+git commit -m "Actualiza sitio"
+git push
+# 2. En GitHub: Settings > Pages > selecciona la rama y guarda
+ 
+# Opción 2: Netlify
+# Arrastra la carpeta del proyecto a app.netlify.com/drop
+# o conecta el repositorio desde el dashboard de Netlify
+	
+
+Diferenciación por ritmo
+Nivel
+	Reto
+	Mínimo
+	Publicar el sitio en GitHub Pages siguiendo los pasos guiados y verificar que el link carga correctamente.
+	Medio
+	Publicar (o volver a publicar) en Netlify conectando el repositorio, y revisar que los cambios recientes ya estén reflejados.
+	Extendido
+	Configurar un dominio/subdominio propio en Netlify, o resolver un problema de rutas (404 en GitHub Pages por rutas relativas mal configuradas).
+	
+
+✎ Reto bonus (opcional — solo para quien ya vio asincronía / Node.js)
+Algunos estudiantes ya tuvieron contacto con promesas, async/await o Node.js en sesiones anteriores. Para ellos, antes de publicar, el reto bonus es hacer que su sitio consuma un dato real con fetch + async/await (por ejemplo, mostrar el clima, una cotización, o un dato de una API pública relacionada con su emprendimiento) en vez de solo mostrar contenido estático.
+No es obligatorio ni se espera que todo el grupo lo haga — ofrécelo puntualmente a quien termine rápido los retos mínimo/medio/extendido y ya sepa qué es un fetch. Si nadie en la sala ha visto el tema, omítelo sin problema.
+	
+
+✓ Cierre / conexión con el programa
+Este bloque es, literalmente, la prueba de que el proyecto existe fuera de su computador. Recuérdales que un link público que funciona es algo que ya pueden compartir con familia, amigos o posibles usuarios de su emprendimiento — no hay que esperar a que el proyecto esté “terminado” para publicarlo.
+	________________
+
+
+Descanso activo (10 min)
+ℹ Nota
+Aprovecha que es presencial: sacúlos de la silla. Una idea simple es una ronda de “el objeto misterioso” — cada estudiante dice en una frase qué tema del día le costó más, sin juzgar respuestas. Sirve como termómetro informal antes del repaso integrador.
+	________________
+
+
+Repaso integrador en equipos (20 min)
+Como no hay mesas grandes, forma los equipos por cercanía de puesto (por ejemplo, cada fila o cada 3-4 computadores es un equipo) — mezclando colores del semáforo, no tracks, para que no queden equipos enteros en rojo. Formato tipo trivia rápida: lees una pregunta en voz alta desde el frente, los equipos tienen 30 segundos para discutir en voz baja, y un vocero por equipo dice la respuesta o la escribe en el Padlet.
+Preguntas sugeridas (mezcla los 4 temas)
+1. ¿Qué devuelve typeof cuando aplican la función sobre un array?
+2. ¿Cuál es la diferencia entre .textContent y .innerHTML?
+3. ¿Cuántas columnas crea grid-template-columns: repeat(4, 1fr)?
+4. ¿Qué clase de Tailwind usarían para dar padding de 4 unidades a un contenedor?
+5. Si un botón no responde al hacer clic, ¿cuáles son las 2 primeras cosas que revisarían?
+6. ¿En qué se diferencia publicar en GitHub Pages de publicar en Netlify?
+
+
+✎ Ejercicio
+Después de cada pregunta, pide a un equipo que explique el porqué de su respuesta, no solo la respuesta. Ahí es donde se ve si realmente entendieron o memorizaron.
+Si un equipo falla una pregunta, no la resuelvas tú de inmediato: pregunta a otro equipo si puede ayudar a explicarla. El aprendizaje entre pares cierra brechas más rápido que la explicación del mentor.
+	________________
+
+
+Aplicación al proyecto propio (20 min)
+Con el semáforo de dominio lleno y los 4 bloques recorridos, cada estudiante vuelve a su propio proyecto y responde individualmente en su README o en un comentario del código:
+1. ¿Cuál de los 4 temas de hoy es el que más necesito reforzar antes de seguir avanzando?
+2. ¿En qué parte específica de mi proyecto voy a aplicar esta semana lo que repasé hoy?
+3. ¿Qué recurso voy a usar para practicar esa brecha antes de la próxima sesión (guía escrita, MDN, freeCodeCamp, mentoría entre semana)?
+
+
+✓ Cierre / conexión con el programa
+Este ejercicio no es un formalismo: es la manera de que cada estudiante salga de hoy con un plan concreto, no solo con la sensación de “hoy repasamos mucho”. Recordándoles que la meta del programa nunca fue memorizar, sino poder aplicar cada concepto a su propio emprendimiento — y hoy es exactamente eso.
+Recoge (foto o Padlet) las brechas que cada estudiante identificó. Esa información es oro para priorizar las próximas mentorías entre semana.
+	
+
+Encuesta / reflexión de salida
+* ¿Qué tan preparado te sientes hoy para aplicar estos 4 temas en tu proyecto sin ayuda? (escala 1-5)
+* ¿Qué estación te gustaría que se repitiera con más tiempo?
+* ¿Qué tipo de material te ayudaría más a practicar solo/a esta semana?
